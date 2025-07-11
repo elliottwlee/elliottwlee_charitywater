@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>charity: water | Landing Page</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+
+    <style>
+        :root { --cw-yellow: #FFC907; --cw-dark-blue: #003366; --cw-sky-blue: #77A8BB; --cw-cream: #FFF7E1; --cw-charcoal: #1A1A1A; --font-primary: 'Montserrat', sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: var(--font-primary); background-color: var(--cw-cream); color: var(--cw-charcoal); }
+        img { max-width: 100%; display: block; }
+        a { text-decoration: none; color: inherit; }
+        .container { width: 90%; max-width: 1200px; margin-left: auto; margin-right: auto; position: relative; z-index: 10; }
+        .site-header { width: 100%; padding: 1rem 0; background-color: var(--cw-cream); }
+        .header-container { display: flex; justify-content: space-between; align-items: center; }
+        .logo { display: flex; align-items: center; gap: 0.5rem; }
+        .logo-icon { width: 1.5rem; height: 2rem; }
+        .logo-text { font-size: 1.25rem; font-weight: 700; letter-spacing: -0.05em; }
+        .button-primary { background-color: var(--cw-yellow); color: var(--cw-charcoal); font-weight: 700; padding: 0.5rem 1.5rem; border-radius: 0.5rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); transition: background-color 0.3s ease; }
+        .button-primary:hover { background-color: #e6b506; }
+        .main-content { background-color: var(--cw-sky-blue); width: 100%; position: relative; overflow: hidden; padding: 4rem 0; }
+        .shape { position: absolute; z-index: 0; border-radius: 50%; }
+        .shape-1 { width: 250px; height: 300px; background-color: var(--cw-dark-blue); opacity: 0.2; top: 50%; left: 25%; transform: translate(-50%, -50%) rotate(-12deg); }
+        .shape-2 { width: 200px; height: 240px; background-color: var(--cw-yellow); opacity: 0.8; bottom: 0; right: 0; transform: translate(25%, 25%) rotate(12deg); }
+        .hero-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: center; }
+        .hero-text h1 { font-size: 3rem; font-weight: 900; color: var(--cw-dark-blue); line-height: 1.1; }
+        .hero-text p { margin-top: 1.5rem; font-size: 1.125rem; color: var(--cw-charcoal); max-width: 36rem; }
+        .hero-buttons { margin-top: 2.5rem; display: flex; flex-direction: column; align-items: flex-start; gap: 1rem; }
+        .button-splash { background-color: var(--cw-yellow); color: var(--cw-charcoal); text-align: center; font-weight: 700; font-size: 1.25rem; padding: 1rem 2.5rem; border-radius: 0.5rem; box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1); transition: transform 0.3s ease; }
+        .button-splash:hover { transform: scale(1.05); }
+        .link-ripple { color: var(--cw-dark-blue); font-weight: 700; text-decoration: underline; transition: color 0.3s ease; }
+        .link-ripple:hover { color: var(--cw-yellow); }
+        .image-grid { display: grid; grid-template-columns: 1fr 1fr; grid-template-rows: auto auto; gap: 1rem; }
+        .image-box { border-radius: 0.5rem; overflow: hidden; border: 8px solid var(--cw-yellow); box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); }
+        .image-box img { width: 100%; height: 100%; object-fit: cover; }
+        .image-box-1 { grid-column: 1 / -1; }
+        .video-box { position: relative; background-color: black; }
+        .video-box img { opacity: 0.6; transition: opacity 0.3s ease; }
+        .video-box:hover img { opacity: 0.4; }
+        .play-button-overlay { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+        .play-button { width: 5rem; height: 5rem; background-color: rgba(255, 255, 255, 0.3); border-radius: 9999px; border: none; display: flex; align-items: center; justify-content: center; cursor: pointer; backdrop-filter: blur(4px); transition: transform 0.3s ease; }
+        .play-button:hover { transform: scale(1.1); }
+        .play-icon { width: 2.5rem; height: 2.5rem; color: white; margin-left: 0.25rem; }
+        @media (min-width: 640px) { .hero-buttons { flex-direction: row; align-items: center; } }
+        @media (min-width: 768px) { .main-content { padding: 6rem 0; } .hero-text h1 { font-size: 3.75rem; } }
+        @media (min-width: 1024px) { .main-content { padding: 8rem 0; } .hero-grid { grid-template-columns: 1fr 1fr; } }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header class="site-header">
+        <div class="container header-container">
+            <div class="logo">
+              
+               <img src="images/cw_logo-2.png" alt="charity: water logo" class="logo-icon"> 
+
+                </svg>
+                <span class="logo-text">charity: water</span>
+            </div>
+            <a href="#" class="button-primary">Donate</a>
+        </div>
+    </header>
+
+    <!-- Main Content Section -->
+    <main class="main-content">
+        <div class="container">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <h1>One click, One Drop. Big Splash</h1>
+                    <p>Join 186,000+ water projects changing lives in 29 countries, bringing clean water and happy smiles to communities. With 100% of your donation funding clean water, every drop you give flows into real, trackable change.</p>
+                    <div class="hero-buttons">
+                        <a href="#" class="button-splash">Make a Splash</a>
+                        <a href="#" class="link-ripple">Track Your Ripple</a>
+                    </div>
+                </div>
+
+                <div class="image-grid">
+                    
+                    <div class="image-box image-box-1">
+                  
+                        <img src="images/cw_Selects_16x9_19.jpg" alt="Children smiling and drinking from a clean water tap"> 
+                    </div>
+                    <!-- IMAGE 2: Bottom-left image -->
+                    <div class="image-box image-box-2">
+                      
+                        <img src="images/Malawi_2023_CG-3108.jpg" alt="A family standing proudly by their new water well">
+                    </div>
+                    <!-- IMAGE 3: Bottom-right video thumbnail -->
+                    <div class="image-box image-box-3 video-box">
+                        
+                        <img src="images/Water Changes Everything.mp4" alt="Video about how water changes everything"alt="Video about how water changes everything">
+                        <div class="play-button-overlay">
+                            <button class="play-button">
+                                <svg class="play-icon" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path></svg>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
